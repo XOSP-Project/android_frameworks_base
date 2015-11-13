@@ -2719,12 +2719,6 @@ public final class Settings {
         };
 
         /**
-         * Timeout of long-pressing the Back button
-         * @hide
-         */
-        public static final String KILL_APP_LONGPRESS_TIMEOUT = "kill_app_longpress_timeout";
-
-        /**
          * Scaling factor for fonts, float.
          */
         public static final String FONT_SCALE = "font_scale";
@@ -3674,23 +3668,23 @@ public final class Settings {
         /** @hide */
         public static final Validator POINTER_SPEED_VALIDATOR =
                 new InclusiveFloatRangeValidator(-7, 7);
-   
+
         /**
          * XOSP Blur personalization settings
          * @hide
          */
         public static final String STATUS_BAR_EXPANDED_ENABLED_PREFERENCE_KEY = "blurred_status_bar_expanded_enabled_pref";
-   
+
         public static final String BLUR_SCALE_PREFERENCE_KEY = "blurred_expanded_panel_scale_pref";
-   
+
         public static final String BLUR_RADIUS_PREFERENCE_KEY = "blurred_expanded_panel_radius_pref";
-  
+
         public static final String TRANSLUCENT_NOTIFICATIONS_PRECENTAGE_PREFERENCE_KEY = "translucent_notifications_percentage_pref";
 
         public static final String TRANSLUCENT_QUICK_SETTINGS_PRECENTAGE_PREFERENCE_KEY = "translucent_quick_settings_percentage_pref";
-   
+
         public static final String TRANSLUCENT_QUICK_SETTINGS_PREFERENCE_KEY = "translucent_quick_settings_pref";
-   
+
         public static final String TRANSLUCENT_NOTIFICATIONS_PREFERENCE_KEY = "translucent_notifications_pref";
 
         public static final String RECENT_APPS_ENABLED_PREFERENCE_KEY = "blurred_recent_app_enabled_pref";
@@ -3808,7 +3802,7 @@ public final class Settings {
           * @hide
           */
          public static final String VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
-        
+
         /**
          * This restore back the old NavBar icons for users who don't like the new N ones
          * @hide
@@ -3852,7 +3846,7 @@ public final class Settings {
          * @hide
          */
         public static final String PROXIMITY_AUTO_SPEAKER_INCALL_ONLY = "proximity_auto_speaker_incall_only";
-        
+
         /**
          * Action to perform when the home key is long-pressed.
          * (Default can be configured via config_longPressOnHardwareHomeBehavior)
@@ -3925,8 +3919,8 @@ public final class Settings {
          * @hide
          */
         public static final String NOTIFICATION_LIGHT_SCREEN_ON =
-                "notification_light_screen_on_enable";    
-        
+                "notification_light_screen_on_enable";
+
         /**
          * Action to perform when the menu key is double-tapped.
          * (Default can be configured via config_doubleTapOnHardwareMenuBehavior)
@@ -4084,7 +4078,7 @@ public final class Settings {
          * @hide
          */
         public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
-        
+
         /**
          * Whether or not volume button music controls should be enabled to seek media tracks
          * @hide
@@ -4161,7 +4155,7 @@ public final class Settings {
          * @hide
          */
         public static final String STATUSBAR_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
-        
+
         /**
          * Number of notifications visible on the lockscreen including the overflow container
          * @hide
@@ -6751,6 +6745,12 @@ public final class Settings {
         public static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
 
         /**
+         * Timeout of long-pressing the Back button
+         * @hide
+         */
+        public static final String KILL_APP_LONGPRESS_TIMEOUT = "kill_app_longpress_timeout";
+
+        /**
          * The default NFC payment component
          * @hide
          */
@@ -6927,8 +6927,8 @@ public final class Settings {
          * @hide
          */
         public static final String DOUBLE_TAP_TO_WAKE = "double_tap_to_wake";
-        
-         
+
+
         /**
          * The current assistant component. It could be a voice interaction service,
          * or an activity that handles ACTION_ASSIST, or empty which means using the default

@@ -541,6 +541,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                    false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_CARRIER), false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_ROTATION),false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.ACCELEROMETER_ROTATION),false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -616,6 +620,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             mShowCarrierLabel = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
                     
+            mStatusBarWindowManager.updateKeyguardScreenRotation();
             RecentsActivity.updateBlurColors(mBlurDarkColorFilter,mBlurMixedColorFilter,mBlurLightColorFilter);
             RecentsActivity.updateRadiusScale(mScaleRecents,mRadiusRecents);
         }
@@ -694,6 +699,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         }
     };
 
+    SettingsObserver observer = new SettingsObserver(mHandler);
     private int mInteractingWindows;
     private boolean mAutohideSuspended;
     private int mStatusBarMode;
@@ -922,7 +928,6 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             // no window manager? good luck with that
         }
 
-        SettingsObserver observer = new SettingsObserver(mHandler);
         observer.observe();
 
         // Lastly, call to the icon policy to install/update all the icons.
@@ -4277,6 +4282,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         mLockscreenWallpaper.setCurrentUser(newUserId);
         mScrimController.setCurrentUser(newUserId);
         updateMediaMetaData(true, false);
+        observer.update();
     }
 
     private void setControllerUsers() {

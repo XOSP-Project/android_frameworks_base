@@ -4073,6 +4073,13 @@ public final class Settings {
         public static final String DOUBLE_TAP_WAKE_DOZE = "double_tap_wake_doze";
 
         /**
+         * Control whether the accelerometer will be used to change lockscreen
+         * orientation.  If 0, it will not be used; if 1, it will be used by default.
+         * @hide
+         */
+        public static final String LOCKSCREEN_ROTATION = "lockscreen_rotation";
+        
+        /**
          * Whether or not volume button music controls should be enabled to seek media tracks
          * @hide
          */

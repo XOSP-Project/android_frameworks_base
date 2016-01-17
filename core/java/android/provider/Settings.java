@@ -4073,6 +4073,12 @@ public final class Settings {
         public static final String DOUBLE_TAP_WAKE_DOZE = "double_tap_wake_doze";
 
         /**
+         * whether to enable torch on lockscreen
+         * @hide
+         */
+        public static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
+        
+        /**
          * Control whether the accelerometer will be used to change lockscreen
          * orientation.  If 0, it will not be used; if 1, it will be used by default.
          * @hide

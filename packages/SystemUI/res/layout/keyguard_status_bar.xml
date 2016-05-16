@@ -67,7 +67,7 @@
             android:importantForAccessibility="noHideDescendants"/>
     </LinearLayout>
 
-    <com.android.keyguard.CarrierText
+    <com.android.systemui.statusbar.widget.CarrierLabel
         android:id="@+id/keyguard_carrier_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -75,8 +75,7 @@
         android:layout_toStartOf="@id/system_icons_super_container"
         android:gravity="center_vertical"
         android:ellipsize="marquee"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#ffffff"
+        android:textAppearance="@style/TextAppearance.StatusBar.CarrierLabel"
         android:singleLine="true" />
 
 </com.android.systemui.statusbar.phone.KeyguardStatusBarView>

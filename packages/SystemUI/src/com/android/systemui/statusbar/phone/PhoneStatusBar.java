@@ -386,6 +386,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     protected NotificationPanelView mNotificationPanel; // the sliding/resizing panel within the notification window
     View mExpandedContents;
     TextView mNotificationPanelDebugText;
+    
+    private int mShowCarrierLabel;
+    private TextView mCustomCarrierLabel;
 
     // settings
     private QSPanel mQSPanel;
@@ -533,9 +536,11 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     Settings.System.BLUR_LIGHT_COLOR_PREFERENCE_KEY), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.BLUR_MIXED_COLOR_PREFERENCE_KEY), false, this); 
-           resolver.registerContentObserver(Settings.System.getUriFor(
+            resolver.registerContentObserver(Settings.System.getUriFor(
                    Settings.System.STATUS_BAR_SHOW_TICKER),
                    false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_SHOW_CARRIER), false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -558,6 +563,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                         mContext.getResources().getBoolean(R.bool.enable_ticker)
                         ? 1 : 1, UserHandle.USER_CURRENT) == 1;
                 initTickerView();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_SHOW_CARRIER))) {
+                    updateCarrier();
             }
         }
         
@@ -604,6 +612,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     Settings.System.BLUR_MIXED_COLOR_PREFERENCE_KEY, Color.GRAY);
             mBlurLightColorFilter = Settings.System.getInt(mContext.getContentResolver(), 
                     Settings.System.BLUR_LIGHT_COLOR_PREFERENCE_KEY, Color.DKGRAY);
+            
+            mShowCarrierLabel = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
                     
             RecentsActivity.updateBlurColors(mBlurDarkColorFilter,mBlurMixedColorFilter,mBlurLightColorFilter);
             RecentsActivity.updateRadiusScale(mScaleRecents,mRadiusRecents);
@@ -1135,6 +1146,11 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         initSignalCluster(mStatusBarView);
         initSignalCluster(mKeyguardStatusBar);
         initEmergencyCryptkeeperText();
+        
+         mCustomCarrierLabel = (TextView) mStatusBarWindow.findViewById(R.id.statusbar_carrier_text);
+         if (mCustomCarrierLabel != null) {
+             updateCarrier();
+         }
 
         mFlashlightController = new FlashlightController(mContext);
         mKeyguardBottomArea.setFlashlightController(mFlashlightController);
@@ -2352,6 +2368,18 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
     public void requestNotificationUpdate() {
         updateNotifications();
+    }
+    
+    private void updateCarrier() {
+        if (mCustomCarrierLabel != null) {
+            if (mShowCarrierLabel == 2) {
+                mCustomCarrierLabel.setVisibility(View.VISIBLE);
+            } else if (mShowCarrierLabel == 3) {
+                mCustomCarrierLabel.setVisibility(View.VISIBLE);
+            } else {
+                mCustomCarrierLabel.setVisibility(View.GONE);
+            }
+        }
     }
 
     @Override
@@ -4956,6 +4984,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         updateStackScrollerState(goingToFullShade, fromShadeLocked);
         updateNotifications();
         checkBarModes();
+        updateCarrier();
         updateMediaMetaData(false, mState != StatusBarState.KEYGUARD);
         mKeyguardMonitor.notifyKeyguardState(mStatusBarKeyguardViewManager.isShowing(),
                 mStatusBarKeyguardViewManager.isSecure(),

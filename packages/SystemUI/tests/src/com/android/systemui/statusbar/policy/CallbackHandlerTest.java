@@ -31,6 +31,8 @@ import org.mockito.MockitoAnnotations;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.mockito.Matchers.eq;
+
 @SmallTest
 public class CallbackHandlerTest extends AndroidTestCase {
 

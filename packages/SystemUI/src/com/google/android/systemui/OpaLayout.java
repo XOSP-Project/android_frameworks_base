@@ -51,7 +51,7 @@ public class OpaLayout extends FrameLayout implements ButtonDispatcher.ButtonInt
     private int mAnimationState;
     private final ArraySet<Animator> mCurrentAnimators;
 
-    private boolean mIsLandscape;
+    private boolean mIsVertical;
     private boolean mIsPressed;
     private boolean mLongClicked;
     private boolean mOpaEnabled;
@@ -248,7 +248,7 @@ public class OpaLayout extends FrameLayout implements ButtonDispatcher.ButtonInt
     private ArraySet<Animator> getCollapseAnimatorSet() {
         final ArraySet<Animator> set = new ArraySet<Animator>();
         Animator animator;
-        if (this.mIsLandscape) {
+        if (this.mIsVertical) {
             animator = this.getDeltaAnimatorY(this.mRed, this.mCollapseInterpolator, -this.getPxVal(R.dimen.opa_line_x_collapse_ry), OpaLayout.COLLAPSE_ANIMATION_DURATION_RY);
         }
         else {
@@ -258,7 +258,7 @@ public class OpaLayout extends FrameLayout implements ButtonDispatcher.ButtonInt
         set.add(this.getScaleAnimatorX(this.mRed, 1.0f, OpaLayout.DOTS_RESIZE_DURATION, this.mDotsFullSizeInterpolator));
         set.add(this.getScaleAnimatorY(this.mRed, 1.0f, OpaLayout.DOTS_RESIZE_DURATION, this.mDotsFullSizeInterpolator));
         Animator animator2;
-        if (this.mIsLandscape) {
+        if (this.mIsVertical) {
             animator2 = this.getDeltaAnimatorY(this.mBlue, this.mCollapseInterpolator, -this.getPxVal(R.dimen.opa_line_x_collapse_bg), OpaLayout.COLLAPSE_ANIMATION_DURATION_BG);
         }
         else {
@@ -268,7 +268,7 @@ public class OpaLayout extends FrameLayout implements ButtonDispatcher.ButtonInt
         set.add(this.getScaleAnimatorX(this.mBlue, 1.0f, OpaLayout.DOTS_RESIZE_DURATION, this.mDotsFullSizeInterpolator));
         set.add(this.getScaleAnimatorY(this.mBlue, 1.0f, OpaLayout.DOTS_RESIZE_DURATION, this.mDotsFullSizeInterpolator));
         Animator animator3;
-        if (this.mIsLandscape) {
+        if (this.mIsVertical) {
             animator3 = this.getDeltaAnimatorY(this.mYellow, this.mCollapseInterpolator, this.getPxVal(R.dimen.opa_line_x_collapse_ry), OpaLayout.COLLAPSE_ANIMATION_DURATION_RY);
         }
         else {
@@ -278,7 +278,7 @@ public class OpaLayout extends FrameLayout implements ButtonDispatcher.ButtonInt
         set.add(this.getScaleAnimatorX(this.mYellow, 1.0f, OpaLayout.DOTS_RESIZE_DURATION, this.mDotsFullSizeInterpolator));
         set.add(this.getScaleAnimatorY(this.mYellow, 1.0f, OpaLayout.DOTS_RESIZE_DURATION, this.mDotsFullSizeInterpolator));
         Animator animator4;
-        if (this.mIsLandscape) {
+        if (this.mIsVertical) {
             animator4 = this.getDeltaAnimatorY(this.mGreen, this.mCollapseInterpolator, this.getPxVal(R.dimen.opa_line_x_collapse_bg), OpaLayout.COLLAPSE_ANIMATION_DURATION_BG);
         }
         else {
@@ -332,7 +332,7 @@ public class OpaLayout extends FrameLayout implements ButtonDispatcher.ButtonInt
 
     private ArraySet<Animator> getLineAnimatorSet() {
         final ArraySet<Animator> set = new ArraySet<Animator>();
-        if (this.mIsLandscape) {
+        if (this.mIsVertical) {
             set.add(this.getDeltaAnimatorY(this.mRed, this.mFastOutSlowInInterpolator, this.getPxVal(R.dimen.opa_line_y_translation), OpaLayout.LINE_ANIMATION_DURATION_Y));
             set.add(this.getDeltaAnimatorX(this.mRed, this.mFastOutSlowInInterpolator, this.getPxVal(R.dimen.opa_line_x_trans_ry), OpaLayout.LINE_ANIMATION_DURATION_X));
             set.add(this.getDeltaAnimatorY(this.mBlue, this.mFastOutSlowInInterpolator, this.getPxVal(R.dimen.opa_line_y_translation), OpaLayout.LINE_ANIMATION_DURATION_Y));
@@ -534,9 +534,9 @@ public class OpaLayout extends FrameLayout implements ButtonDispatcher.ButtonInt
         ((ImageView) mWhite).setImageResource(resId);
     }
 
-    public void setLandscape(boolean landscape) {
-        this.mIsLandscape = mIsLandscape;
-        if (this.mIsLandscape) {
+    public void setVertical(boolean vertical) {
+        this.mIsVertical = mIsVertical;
+        if (this.mIsVertical) {
             this.mTop = this.mGreen;
             this.mBottom = this.mBlue;
             this.mRight = this.mYellow;

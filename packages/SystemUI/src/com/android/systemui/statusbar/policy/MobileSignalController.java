@@ -433,11 +433,7 @@ public class MobileSignalController extends SignalController<
         }
         mCurrentState.dataConnected = mCurrentState.connected
                 && mDataState == TelephonyManager.DATA_CONNECTED;
-        if (mContext.getResources().getBoolean(R.bool.show_roaming_and_network_icons)) {
-            mCurrentState.roaming = isRoaming();
-        } else {
-            mCurrentState.roaming = false;
-        }
+
         if (isCarrierNetworkChangeActive()) {
             mCurrentState.iconGroup = TelephonyIcons.CARRIER_NETWORK_CHANGE;
         } else if (isRoaming()) {
@@ -617,7 +613,6 @@ public class MobileSignalController extends SignalController<
             builder.append("networkName=").append(networkName).append(',');
             builder.append("networkNameData=").append(networkNameData).append(',');
             builder.append("dataConnected=").append(dataConnected).append(',');
-            builder.append("roaming=").append(roaming).append(',');
             builder.append("isDefault=").append(isDefault).append(',');
             builder.append("isEmergency=").append(isEmergency).append(',');
             builder.append("airplaneMode=").append(airplaneMode).append(',');

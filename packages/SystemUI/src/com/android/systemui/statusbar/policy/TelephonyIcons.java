@@ -95,6 +95,8 @@ class TelephonyIcons {
           R.drawable.ic_qs_signal_carrier_network_change_animation }
     };
 
+    static final int QS_DATA_R = R.drawable.ic_qs_signal_r;
+
     //***** Data connection icons
 
     //GSM/UMTS
@@ -436,6 +438,21 @@ class TelephonyIcons {
             TelephonyIcons.ICON_LTE_PLUS,
             true,
             TelephonyIcons.QS_DATA_LTE_PLUS
+            );
+
+    static final MobileIconGroup ROAMING = new MobileIconGroup(
+            "Roaming",
+            TelephonyIcons.TELEPHONY_SIGNAL_STRENGTH_ROAMING,
+            TelephonyIcons.QS_TELEPHONY_SIGNAL_STRENGTH,
+            AccessibilityContentDescriptions.PHONE_SIGNAL_STRENGTH,
+            0, 0,
+            TelephonyIcons.TELEPHONY_NO_NETWORK,
+            TelephonyIcons.QS_TELEPHONY_NO_NETWORK,
+            AccessibilityContentDescriptions.PHONE_SIGNAL_STRENGTH[0],
+            R.string.accessibility_data_connection_roaming,
+            TelephonyIcons.ROAMING_ICON,
+            false,
+            TelephonyIcons.QS_DATA_R
             );
 
     static final MobileIconGroup DATA_DISABLED = new MobileIconGroup(

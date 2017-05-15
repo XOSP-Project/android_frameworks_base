@@ -436,24 +436,6 @@ public class QuickStatusBarHeader extends BaseStatusBarHeader implements
             }
         }
     }
-    
-    @Override
-    public void setMobileDataIndicators(IconState statusIcon, IconState qsIcon, int statusType,
-            int qsType, boolean activityIn, boolean activityOut, int dataActivityId,
-            int mobileActivityId, int stackedDataIcon, int stackedVoiceIcon,
-            String typeContentDescription, String description, boolean isWide, int subId,
-            boolean roaming) {
-        mRoamingsBySubId.put(subId, roaming);
-        boolean isRoaming = calculateRoaming();
-        if (mIsRoaming != isRoaming) {
-            mIsRoaming = isRoaming;
-            mEmergencyOnly.setText(mIsRoaming ? R.string.accessibility_data_connection_roaming
-                    : com.android.internal.R.string.emergency_calls_only);
-            if (mExpanded) {
-                updateEverything();
-            }
-        }
-    }
 
     private boolean calculateRoaming() {
         for (int i = 0; i < mRoamingsBySubId.size(); i++) {

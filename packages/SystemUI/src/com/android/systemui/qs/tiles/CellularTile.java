@@ -280,8 +280,6 @@ public class CellularTile extends QSTile<QSTile.SignalState> {
             final DataUsageController.DataUsageInfo info = mDataController.getDataUsageInfo();
             if (info == null) return v;
             v.bind(info);
-            v.findViewById(R.id.roaming_text).setVisibility(mSignalCallback.mInfo.roaming
-                    ? View.VISIBLE : View.INVISIBLE);
             return v;
         }
 

@@ -38,7 +38,6 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 
 import com.android.internal.statusbar.StatusBarIcon;
-import com.android.internal.util.cosmic.FontHelper;
 import com.android.internal.util.cosmic.TickerColorHelper;
 import com.android.internal.util.NotificationColorUtil;
 import com.android.systemui.R;
@@ -59,7 +58,6 @@ public abstract class Ticker {
     private float mIconScale;
     private int mTickerTextColor;
     private int mTickerFontSize = 14;
-    private Typeface mFontStyle;
 
 
     public static boolean isGraphicOrEmoji(char c) {
@@ -192,7 +190,6 @@ public abstract class Ticker {
         mPaint = text.getPaint();
         updateTextColor();
         updateTickerSize();
-        updateTickerFontStyle();
     }
 
 
@@ -245,10 +242,8 @@ public abstract class Ticker {
             mTextSwitcher.setText(seg.getText());
             updateTickerSize();
             updateTextColor();
-            updateTickerFontStyle();
             mTextSwitcher.setTextColor(mTickerTextColor);
             mTextSwitcher.setTextSize(mTickerFontSize);
-            mTextSwitcher.setTypeface(mFontStyle);
 
             tickerStarting();
             scheduleAdvance();
@@ -293,7 +288,6 @@ public abstract class Ticker {
             updateTextColor();
             mTextSwitcher.setTextColor(mTickerTextColor);
             mTextSwitcher.setTextSize(mTickerFontSize);
-            mTextSwitcher.setTypeface(mFontStyle);
         }
     }
 
@@ -319,7 +313,6 @@ public abstract class Ticker {
                 updateTextColor();
                 mTextSwitcher.setTextColor(mTickerTextColor);
                 mTextSwitcher.setTextSize(mTickerFontSize);
-                mTextSwitcher.setTypeface(mFontStyle);
 
                 scheduleAdvance();
                 break;
@@ -338,99 +331,10 @@ public abstract class Ticker {
     public abstract void tickerDone();
     public abstract void tickerHalting();
 
-    private void updateTickerFontStyle() {
-        final int mTickerFontStyle = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.STATUS_BAR_TICKER_FONT_STYLE, FontHelper.FONT_NORMAL);
-
-        getFontStyle(mTickerFontStyle);
-    }
-
-    public void getFontStyle(int font) {
-        switch (font) {
-            case FontHelper.FONT_NORMAL:
-            default:
-                mFontStyle = FontHelper.NORMAL;
-                break;
-            case FontHelper.FONT_ITALIC:
-                mFontStyle = FontHelper.ITALIC;
-                break;
-            case FontHelper.FONT_BOLD:
-                mFontStyle = FontHelper.BOLD;
-                break;
-            case FontHelper.FONT_BOLD_ITALIC:
-                mFontStyle = FontHelper.BOLD_ITALIC;
-                break;
-            case FontHelper.FONT_LIGHT:
-                mFontStyle = FontHelper.LIGHT;
-                break;
-            case FontHelper.FONT_LIGHT_ITALIC:
-                mFontStyle = FontHelper.LIGHT_ITALIC;
-                break;
-            case FontHelper.FONT_THIN:
-                mFontStyle = FontHelper.THIN;
-                break;
-            case FontHelper.FONT_THIN_ITALIC:
-                mFontStyle = FontHelper.THIN_ITALIC;
-                break;
-            case FontHelper.FONT_CONDENSED:
-                mFontStyle = FontHelper.CONDENSED;
-                break;
-            case FontHelper.FONT_CONDENSED_ITALIC:
-                mFontStyle = FontHelper.CONDENSED_ITALIC;
-                break;
-            case FontHelper.FONT_CONDENSED_LIGHT:
-                mFontStyle = FontHelper.CONDENSED_LIGHT;
-                break;
-            case FontHelper.FONT_CONDENSED_LIGHT_ITALIC:
-                mFontStyle = FontHelper.CONDENSED_LIGHT_ITALIC;
-                break;
-            case FontHelper.FONT_CONDENSED_BOLD:
-                mFontStyle = FontHelper.CONDENSED_BOLD;
-                break;
-            case FontHelper.FONT_CONDENSED_BOLD_ITALIC:
-                mFontStyle = FontHelper.CONDENSED_BOLD_ITALIC;
-                break;
-            case FontHelper.FONT_MEDIUM:
-                mFontStyle = FontHelper.MEDIUM;
-                break;
-            case FontHelper.FONT_MEDIUM_ITALIC:
-                mFontStyle = FontHelper.MEDIUM_ITALIC;
-                break;
-            case FontHelper.FONT_BLACK:
-                mFontStyle = FontHelper.BLACK;
-                break;
-            case FontHelper.FONT_BLACK_ITALIC:
-                mFontStyle = FontHelper.BLACK_ITALIC;
-                break;
-            case FontHelper.FONT_DANCINGSCRIPT:
-                mFontStyle = FontHelper.DANCINGSCRIPT;
-                break;
-            case FontHelper.FONT_DANCINGSCRIPT_BOLD:
-                mFontStyle = FontHelper.DANCINGSCRIPT_BOLD;
-                break;
-            case FontHelper.FONT_COMINGSOON:
-                mFontStyle = FontHelper.COMINGSOON;
-                break;
-            case FontHelper.FONT_NOTOSERIF:
-                mFontStyle = FontHelper.NOTOSERIF;
-                break;
-            case FontHelper.FONT_NOTOSERIF_ITALIC:
-                mFontStyle = FontHelper.NOTOSERIF_ITALIC;
-                break;
-            case FontHelper.FONT_NOTOSERIF_BOLD:
-                mFontStyle = FontHelper.NOTOSERIF_BOLD;
-                break;
-            case FontHelper.FONT_NOTOSERIF_BOLD_ITALIC:
-                mFontStyle = FontHelper.NOTOSERIF_BOLD_ITALIC;
-                break;
-        }
-    }
-
     private void updateTickerSize() {
         mTickerFontSize = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.STATUS_BAR_TICKER_FONT_SIZE, 14,
                 UserHandle.USER_CURRENT);
-
     }
 
     public void updateTextColor() {

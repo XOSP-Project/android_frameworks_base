@@ -78,12 +78,12 @@
     <!-- Primary & accent colors -->
     <eat-comment />
 
-    <color name="material_grey_900">@color/xosp_midnight_palette_900</color>
-    <color name="material_grey_850">@color/xosp_midnight_palette_800</color>
-    <color name="material_grey_800">@color/xosp_midnight_palette_800</color>
-    <color name="material_grey_600">@color/xosp_midnight_palette_600</color>
-    <color name="material_grey_300">@color/xosp_midnight_palette_300</color>
-    <color name="material_grey_100">@color/xosp_midnight_palette_100</color>
+    <color name="material_grey_900">#ff212121</color>
+    <color name="material_grey_850">#ff303030</color>
+    <color name="material_grey_800">#ff424242</color>
+    <color name="material_grey_600">#ff757575</color>
+    <color name="material_grey_300">#ffe0e0e0</color>
+    <color name="material_grey_100">#fff5f5f5</color>
     <color name="material_grey_50">#fffafafa</color>
 
     <color name="material_deep_teal_50">@color/xosp_blue_palette_50</color>

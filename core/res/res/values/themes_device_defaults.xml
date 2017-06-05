@@ -740,7 +740,6 @@ easier.
     <style name="Theme.DeviceDefault.Settings" parent="Theme.Material.Settings">
         <!-- Color palette -->
         <item name="android:statusBarColor">@color/primary_dark_device_default_settings</item>
-        <item name="android:navigationBarColor">@color/primary_dark_device_default_settings</item>
         <item name="colorPrimary">@color/primary_device_default_settings</item>
         <item name="colorPrimaryDark">@color/primary_dark_device_default_settings</item>
         <item name="colorSecondary">@color/secondary_device_default_settings</item>

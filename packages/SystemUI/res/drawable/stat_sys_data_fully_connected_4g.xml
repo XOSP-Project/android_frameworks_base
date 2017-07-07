@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector android:name="4G" android:height="17.0dip" android:width="17.0dip" android:autoMirrored="false" android:viewportWidth="17.0" android:viewportHeight="17.0"
+<vector android:name="4G" android:height="17.0dip" android:width="8.0dip" android:autoMirrored="false" android:viewportWidth="8.0" android:viewportHeight="17.0"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:translateY="1.0">
         <path android:name="4" android:fillColor="#ffffffff" android:pathData="M0.884,3.1376 L2.026,3.1376 L2.026,1.3216 L2.005,1.3186 L1.905,1.5406 L0.884,3.1376 Z M3,3.1376 L3.548,3.1376 L3.548,3.9156 L3,3.9156 L3,4.9996 L2.026,4.9996 L2.026,3.9156 L0.047,3.9156 L0,3.3136 L2.015,-0.0004 L3,-0.0004 L3,3.1376 Z" android:strokeWidth="1.0" />

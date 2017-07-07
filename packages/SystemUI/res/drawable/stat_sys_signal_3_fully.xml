@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector android:name="3 of 4" android:height="17.0dip" android:width="17.0dip" android:autoMirrored="true" android:viewportWidth="17.0" android:viewportHeight="17.0"
+<vector android:height="17.0dip" android:width="17.0dip" android:autoMirrored="true" android:viewportWidth="24.0" android:viewportHeight="24.0"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:translateX="2.0" android:translateY="2.0">
-        <path android:name="bar1" android:fillColor="?fillColor" android:pathData="M0,14 L2,14 L2,12 L0,14 Z" android:strokeWidth="1.0" />
-        <path android:name="bar2" android:fillColor="?fillColor" android:pathData="M2.9997,11.0003 L2.9997,14.0003 L6.0007,14.0003 L6.0007,7.9993 L2.9997,11.0003 Z" android:strokeWidth="1.0" />
-        <path android:name="bar3" android:fillColor="?fillColor" android:pathData="M7.0002,6.9998 L7.0002,13.9998 L10.0002,13.9998 L10.0002,3.9998 L7.0002,6.9998 Z" android:strokeWidth="1.0" />
-        <path android:name="bar4" android:fillColor="?backgroundColor" android:pathData="M14.0004,-0.0004 L10.9994,3.0006 L10.9994,13.9996 L14.0004,13.9996 L14.0004,-0.0004 Z" android:strokeWidth="1.0" />
-    </group>
+    <path android:fillColor="?backgroundColor" android:pathData="M18,6.024l0,16l4,0l0,-20z" />
+    <path android:fillColor="?fillColor" android:pathData="M12.667,11.357l0,10.667l4,0l0,-14.667z" />
+    <path android:fillColor="?fillColor" android:pathData="M7.333,16.691l0,5.333l4,0l0,-9.333z" />
+    <path android:fillColor="?fillColor" android:pathData="M2,22.024l4,0l0,-4z" />
 </vector>

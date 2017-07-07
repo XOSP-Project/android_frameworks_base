@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector android:height="29.5dip" android:width="32.0dip" android:viewportWidth="26.0" android:viewportHeight="24.0"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#4dffffff" android:pathData="M19.000000,8.000000l5.300000,0.000000l1.200000,-1.500000C25.100000,6.100000 20.299999,2.100000 13.000000,2.100000S0.900000,6.100000 0.400000,6.500000L13.000000,22.000000l0.000000,0.000000l0.000000,0.000000l0.000000,0.000000l0.000000,0.000000l6.000000,-7.400000L19.000000,8.000000z" />
-    <path android:fillColor="#ffffffff" android:pathData="M21.000000,20.000000l2.000000,0.000000l0.000000,2.000000l-2.000000,0.000000z" />
-    <path android:fillColor="#ffffffff" android:pathData="M21.000000,10.000000l2.000000,0.000000l0.000000,8.100000l-2.000000,0.000000z" />
+    <path android:fillColor="#ffffffff" android:pathData="M22.874,9.203l2.278,-2.961C21.792,3.655 17.597,2.1 13.03,2.1c-4.567,0 -8.762,1.555 -12.122,4.142l2.277,2.961c2.73,-2.105 6.139,-3.372 9.844,-3.372S20.144,7.098 22.874,9.203z" android:fillAlpha="0.3" />
+    <path android:fillColor="#ffffffff" android:pathData="M22.117,10.187c-2.521,-1.943 -5.667,-3.112 -9.087,-3.112s-6.566,1.168 -9.088,3.112l2.273,2.954c1.89,-1.458 4.25,-2.335 6.815,-2.335c0.555,0 1.097,0.055 1.63,0.135h6.878L22.117,10.187z" android:fillAlpha="0.3" />
+    <path android:fillColor="#ffffffff" android:pathData="M13.03,12.05c-2.281,0 -4.377,0.78 -6.058,2.075l2.283,2.968c1.05,-0.81 2.349,-1.312 3.775,-1.312c0.562,0 1.098,0.093 1.611,0.242v-3.825C14.115,12.111 13.58,12.05 13.03,12.05z" android:fillAlpha="0.3" />
+    <path android:fillColor="#ffffffff" android:pathData="M13.03,17.025c-1.141,0 -2.179,0.401 -3.02,1.049L13.03,22l1.611,-2.094v-2.585C14.136,17.138 13.599,17.025 13.03,17.025z" android:fillAlpha="0.3" />
+    <path android:fillColor="#ffffffff" android:pathData="M25.017,14.541l-1.471,-1.471l-2.541,2.541l-2.541,-2.541l-1.471,1.471l2.541,2.541l-2.541,2.541l1.471,1.471l2.541,-2.541l2.541,2.541l1.471,-1.471l-2.541,-2.541L25.017,14.541z" />
 </vector>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector android:name="signal_null" android:height="17.0dip" android:width="17.0dip" android:autoMirrored="true" android:viewportWidth="17.0" android:viewportHeight="17.0"
+<vector android:height="17.0dip" android:width="17.0dip" android:autoMirrored="true" android:viewportWidth="24.0" android:viewportHeight="24.0"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:name="signal_null" android:translateX="2.0" android:translateY="2.0">
-        <path android:fillColor="?backgroundColor" android:pathData="M14,0 L0,14 L14,14 L14,0 Z M13.1,2.173 L13.1,13.1 L2.172,13.1 L13.1,2.173 Z" android:strokeWidth="1.0" />
-    </group>
+    <path android:fillColor="?backgroundColor" android:pathData="M2,22.024h20v-20L2,22.024zM20.667,20.691H5.219L20.667,5.243V20.691z" />
 </vector>

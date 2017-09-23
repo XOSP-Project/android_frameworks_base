@@ -86,6 +86,5 @@
             style="@style/widget_big_thin" />
     
     <include layout="@layout/keyguard_status_area" />
-    <include layout="@layout/keyguard_weather_view" />
 </RelativeLayout>
 </com.android.keyguard.KeyguardStatusView>

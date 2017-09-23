@@ -18,6 +18,4 @@
 
     <string name="weather_info_not_available">Weather informations not available</string>
 
-    <!-- Recents task locking button -->
-    <dimen name="recents_task_view_header_lock_button_padding">48dp</dimen>
 </resources>
